@@ -1,39 +1,32 @@
-# FixtureGenerator
-Generates pytest fixtures that allow the use of type hinting (MyPy or PyCharm).
+# pytest-factoryboy-fixtures
+Writes pytest fixtures for FactoryBoy with type hinting. The hints allow for proper code completion in your tests when using PyCharm. 
 
 ## Usage
-`cli.py class1,class2,...`
+`pytest-factoryboy-fixtures [comma seperated class names]`
 
-Example:
+Add the generated code to your `conftest.py`.
 
+### Example
+
+`>>> pytest-factoryboy-fixtures FirstClass,SecondClass`
+```python
+    @fixture
+    def first_class() -> FirstClass:
+        return FirstClassFactory()
+        
+        
+    @fixture
+    def first_class_factory() -> Union[Type[FirstClass], Type[FirstClassFactory]]:
+        return FirstClassFactory
+        
+        
+    @fixture
+    def second_class() -> SecondClass:
+        return SecondClassFactory()
+        
+        
+    @fixture
+    def second_class_factory() -> Union[Type[SecondClass], Type[SecondClassFactory]]:
+        return SecondClassFactory
 ```
->>> cli.py PascalCase,camelCase,snake_case
 
-@fixture
-def pascal_case() -> PascalCase:
-    return PascalCaseFactory()
-
-@fixture
-def pascal_case_factory() -> Union[Type[PascalCase], Type[PascalCaseFactory]]:
-    return PascalCaseFactory
-
-@fixture
-def camel_case() -> CamelCase:
-    return CamelCaseFactory()
-
-@fixture
-def camel_case_factory() -> Union[Type[CamelCase], Type[CamelCaseFactory]]:
-    return CamelCaseFactory
-
-@fixture
-def snake_case() -> SnakeCase:
-    return SnakeCaseFactory()
-
-@fixture
-def snake_case_factory() -> Union[Type[SnakeCase], Type[SnakeCaseFactory]]:
-    return SnakeCaseFactory
-```
-stdout/stdin can be used to write a file instead.
-```
->>> cli.py runTest1,runTest2 > fixtures.py
-```
