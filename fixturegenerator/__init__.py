@@ -9,8 +9,6 @@ class FixtureGenerator:
 
     def __init__(self, string: str):
         """
-        Initializes the class.
-
         :param string: Name of the test object to create the code.
         """
         self.string = string
@@ -42,7 +40,7 @@ class FixtureGenerator:
         """
         Returns a string:
 
-        >> print(FixtureGenerator('run_test').factory_run())
+        >>> print(FixtureGenerator('run_test').factory_run())
 
             @fixture
             def run_test() -> RunTest:
@@ -57,7 +55,7 @@ class FixtureGenerator:
         """
         Returns a string:
 
-        >> print(FixtureGenerator('run_test').factory_run())
+        >>> print(FixtureGenerator('run_test').factory_run())
 
             @fixture
             def run_test() -> Union[Type[RunTest], Type[RunTestFactory]]:
