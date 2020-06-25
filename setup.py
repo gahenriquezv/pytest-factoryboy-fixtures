@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="FixtureGenerator",
+    name="pytest-factoryboy-fixtures",
     version="0.1",
     author="Germán Henríquez",
     author_email="germanandres.hv@gmail.com",
     description="Generates pytest fixtures that allow the use of type hinting",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/G-HenriquezV/FixtureGenerator",
+    url="https://github.com/G-HenriquezV/pytest-factoryboy-fixtures",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
