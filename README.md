@@ -1,5 +1,7 @@
 # pytest-factoryboy-fixtures
-Writes pytest fixtures for FactoryBoy with type hinting. The hints allow for proper code completion in your tests when using PyCharm. 
+Writes pytest fixtures for FactoryBoy with type hinting. The hints allow for proper code completion in your tests when using PyCharm.
+
+This project is on [PyPI](https://pypi.org/project/pytest-factoryboy-fixtures/).
 
 ## Usage
 `pytest-factoryboy-fixtures [comma seperated class names]`
